@@ -27,6 +27,20 @@ public class CpfTest {
     }
     
     @Test
+    public void CpfTeste04InvalidoCodK() {
+        int[] test;
+        test = new int[]{4, 5, 2, 3, 4, 6, 8, 8, 6, 9, 1};
+        assertEquals(false, Cpf.cpf(test));
+    }
+    
+    @Test
+    public void CpfTeste05InvalidoCodKCodJ() {
+        int[] test;
+        test = new int[]{4, 5, 2, 3, 4, 6, 8, 8, 6, 8, 1};
+        assertEquals(false, Cpf.cpf(test));
+    }
+    
+    @Test
     public void Cpf2Teste01MenosDe11Digitos() {
         int[] test = new int[10];
         assertEquals(false, Cpf.cpf2(test));
@@ -44,5 +58,19 @@ public class CpfTest {
         int[] test;
         test = new int[]{4, 5, 2, 3, 4, 6, 8, 8, 6, 9, 0};
         assertEquals(true, Cpf.cpf2(test));
+    }
+    
+    @Test
+    public void Cpf2Teste04InvalidoCodK() {
+        int[] test;
+        test = new int[]{4, 5, 2, 3, 4, 6, 8, 8, 6, 9, 1};
+        assertEquals(false, Cpf.cpf2(test));
+    }
+    
+    @Test
+    public void Cpf2Teste05InvalidoCodKCodJ() {
+        int[] test;
+        test = new int[]{4, 5, 2, 3, 4, 6, 8, 8, 6, 8, 1};
+        assertEquals(false, Cpf.cpf2(test));
     }
 }
